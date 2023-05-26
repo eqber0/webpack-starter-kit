@@ -1,0 +1,90 @@
+@mixin bp($point) {
+  @if $point==desktop-l {
+    @media (max-width: 1920px) {
+      @content;
+    }
+  } @else if $point==r-desktop-l {
+    @media (min-width: 1920px) {
+      @content;
+    }
+  } @else if $point==desktop-m {
+    @media (max-width: 1529px) {
+      @content;
+    }
+  } @else if $point==r-desktop-m {
+    @media (min-width: 1530px) {
+      @content;
+    }
+  } @else if $point==r-laptop {
+    @media (min-width: 1441px) {
+      @content;
+    }
+  } @else if $point==laptop {
+    @media (max-width: 1439px) {
+      @content;
+    }
+  } @else if $point==r-desktop {
+    @media (min-width: 1201px) {
+      @content;
+    }
+  } @else if $point==desktop {
+    @media (max-width: 1199px) {
+      @content;
+    }
+  } @else if $point==tablet-big {
+    @media (max-width: 1023px) {
+      @content;
+    }
+  } @else if $point==tablet {
+    @media (max-width: 991px) {
+      @content;
+    }
+  } @else if $point==tablet-small {
+    @media (max-width: 767px) {
+      @content;
+    }
+  } @else if $point==mobile {
+    @media (max-width: 575px) {
+      @content;
+    }
+  } @else if $point==r-tablet {
+    @media (min-width: 993px) {
+      @content;
+    }
+  } @else if $point==r-tablet-small {
+    @media (min-width: 769px) {
+      @content;
+    }
+  } @else if $point==r-mobile {
+    @media (min-width: 576px) {
+      @content;
+    }
+  } @else if $point==mobile-small {
+    @media (max-width: 480px) {
+      @content;
+    }
+  } @else if $point==mobile-l-small {
+    @media (max-width: 424px) {
+      @content;
+    }
+  } @else if $point==mobile-m-small {
+    @media (max-width: 374px) {
+      @content;
+    }
+  } @else if $point==mobile-x-small {
+    @media (max-width: 350px) {
+      @content;
+    }
+  }
+}
+
+@mixin position($position, $top, $left, $width, $height, $content: false) {
+  @if $content {
+    content: "";
+  }
+  position: $position;
+  top: $top;
+  left: $left;
+  width: $width;
+  height: $height;
+}
