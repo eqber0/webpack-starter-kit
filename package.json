@@ -9,7 +9,7 @@
   "author": "eqber00 <eqber00@gmail.com>",
   "license": "MIT",
   "scripts": {
-    "start": "webpack serve --open",
+    "start": "webpack serve",
     "build": "webpack"
   },
   "dependencies": {

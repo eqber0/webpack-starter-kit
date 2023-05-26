@@ -1,30 +1,59 @@
+:root {
+  --txt-rem54: 5.4rem;
+  --txt-rem48: 4.8rem;
+  --txt-rem36: 3.6rem;
+  --txt-rem30: 3rem;
+  --txt-rem28: 2.8rem;
+  --txt-rem24: 2.4rem;
+  --txt-rem20: 2rem;
+  --txt-rem18: 1.8rem;
+  --txt-rem15: 1.5rem;
+}
 .txt {
-  font-size: 1.6rem;
-  &--px15 {
-    font-size: 1.5rem;
+  &--rem {
+    &54 {
+      font-size: var(--txt-rem54);
+    }
+    &48 {
+      font-size: var(--txt-rem48);
+    }
+    &36 {
+      font-size: var(--txt-rem36);
+    }
+    &30 {
+      font-size: var(--txt-rem30);
+    }
+    &28 {
+      font-size: var(--txt-rem28);
+    }
+    &24 {
+      font-size: var(--txt-rem24);
+    }
+    &20 {
+      font-size: var(--txt-rem20);
+    }
+    &18 {
+      font-size: var(--txt-rem18);
+    }
+    &15 {
+      font-size: var(--txt-rem15);
+    }
   }
-  &--px18 {
-    font-size: 1.8rem;
-  }
-  &--px24 {
-    font-size: 2.4rem;
-  }
-  &--px30 {
-    font-size: 3rem;
-  }
-  &--font300 {
-    font-weight: 300;
-  }
-  &--font400 {
-    font-weight: 400;
-  }
-  &--font500 {
-    font-weight: 500;
-  }
-  &--font600 {
-    font-weight: 600;
-  }
-  &--font700 {
-    font-weight: 700;
+  &--font {
+    &300 {
+      font-weight: 300;
+    }
+    &400 {
+      font-weight: 400;
+    }
+    &500 {
+      font-weight: 500;
+    }
+    &600 {
+      font-weight: 600;
+    }
+    &700 {
+      font-weight: 700;
+    }
   }
 }

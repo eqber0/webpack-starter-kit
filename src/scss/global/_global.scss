@@ -14,6 +14,7 @@ html {
 body {
   font-family: $font-family-base;
   font-size: 1.6rem;
+  line-height: 1.5em;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-rendering: optimizeLegibility !important;
@@ -27,5 +28,24 @@ body {
   }
   @include bp(tablet-small) {
     padding: 5rem 0;
+  }
+}
+
+.starter-kit {
+  padding-top: 2.5rem;
+  &__title {
+    font-size: var(--txt-rem30);
+    font-weight: 700;
+    text-align: center;
+  }
+  &__social {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    margin-top: 3rem;
+    &-item {
+      font-size: 2rem;
+    }
   }
 }

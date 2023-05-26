@@ -8,9 +8,23 @@ block append head
   title= pageName + " Webpack 5 Starter Kit"
 
 block content
-  main
-    // Your page content
-    h1 Index Page
-    //- img(src="../../images/sw-logo.png", alt="")
-    include ../components/imageCard.pug
-    span.icon.icon-font(data-icon-id="iconLinkedin")
+  main.starter-kit
+    .container 
+      .starter-kit__title 
+        h1 This is a Index Page
+      .starter-kit__social 
+        .starter-kit__social-item 
+          a(href="#0") 
+            span.icon.icon-font(data-icon-id="iconLinkedin")
+        .starter-kit__social-item 
+          a(href="#0") 
+            span.icon.icon-font(data-icon-id="iconFacebook")
+        .starter-kit__social-item 
+          a(href="#0") 
+            span.icon.icon-font(data-icon-id="iconInstagram")
+        .starter-kit__social-item 
+          a(href="#0") 
+            span.icon.icon-font(data-icon-id="iconTwitter")
+        .starter-kit__social-item 
+          a(href="#0") 
+            span.icon.icon-font(data-icon-id="iconYoutube")

@@ -1,15 +1,18 @@
-/* Font Sizes */
-
 /* Font Families */
 $font-family-base: "Poppins", sans-serif;
 
-/* Transitions */
-$transition: 0.3s cubic-bezier(0.29, 0.13, 0.27, 0.74);
-$transition-fast: 0.2s cubic-bezier(0.29, 0.13, 0.27, 0.74);
-
-/* Colors */
-$c-black: #000000;
-
 :root {
+  /* Transitions */
   --transition: 0.3s cubic-bezier(0.29, 0.13, 0.27, 0.74);
+
+  /* Colors */
+  --c-white: #ffffff;
+  --c-black: #000000;
+}
+
+.c-white {
+  color: var(--c-white);
+}
+.c-black {
+  color: var(--c-black);
 }

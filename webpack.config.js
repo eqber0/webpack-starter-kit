@@ -74,7 +74,9 @@ module.exports = {
     ],
   },
   plugins: [
-    new CleanWebpackPlugin(),
+    new CleanWebpackPlugin({
+      cleanOnceBeforeBuildPatterns: [],
+    }),
     ...pagePlugins,
     new MiniCssExtractPlugin({
       filename: "css/style.css",

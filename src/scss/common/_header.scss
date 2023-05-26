@@ -1,3 +1,18 @@
 .header {
-  background: var(--ui-bg);
+  border-bottom: 0.1rem solid var(--c-black);
+  &__wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 1.5rem 0;
+    gap: 2rem;
+  }
+  &__nav {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    font-size: var(--txt-rem24);
+    font-weight: 700;
+  }
 }
