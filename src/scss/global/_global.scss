@@ -1,18 +1,9 @@
-.transition-fade {
-  transition: 0.4s;
-  opacity: 1;
-}
-
-html.is-animating .transition-fade {
-  opacity: 0;
-}
-
 html {
   font-size: 10px;
 }
 
 body {
-  font-family: $font-family-base;
+  font-family: var(--font-family);
   font-size: 1.6rem;
   line-height: 1.5em;
   -webkit-font-smoothing: antialiased;
@@ -22,7 +13,6 @@ body {
 
 .section {
   padding: 10rem 0;
-
   @include bp(tablet) {
     padding: 7.5rem 0;
   }
