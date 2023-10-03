@@ -1,5 +1,6 @@
 // Imports
-import icons from "../icons/icons"
+import components from "./component.js"
+components()
 
 // Functions
 var app = {
@@ -9,46 +10,35 @@ var app = {
   resized() {
     console.log("resized")
   },
-  iconSpriteFn() {
-    icons.forEach(iconSpriteFn)
-    function iconSpriteFn(item, index) {
-      const iconSprite = document.querySelector("#iconSprite")
-      if (iconSprite) {
-        iconSprite.innerHTML +=
-          "<div class='icon-sprite__item'>" +
-          "<span class='icon-sprite__number'>" +
-          (index + 1) +
-          "</span>" +
-          "<div class='icon-sprite__preview'>" +
-          "<span class='icon icon-font'>" +
-          item.iconSvg +
-          "</span>" +
-          "</div>" +
-          "<div class='icon-sprite__name'>" +
-          item.iconId +
-          "</div>" +
-          "</div>"
-      }
+  // Base Functions
+  uikitFn() {
+    const uiContent = document.querySelectorAll(
+      ".js-uikit-content .uikit__item"
+    )
+    const uiSide = document.querySelector(".js-uikit-side")
+    uiContent.forEach((uiContent, i) => {
+      let uiContentName = uiContent.getAttribute("id")
+      const uiLinkItem = document.createElement("li")
+      const uiLinkItemA = document.createElement("a")
+      uiLinkItemA.setAttribute("href", `#${uiContentName}`)
+      uiLinkItem.classList.add("uikit__side-item")
+      uiLinkItem.appendChild(uiLinkItemA)
+      uiLinkItemA.innerHTML = uiContentName.replace(/-/g, " ")
 
-      const icon = document.querySelectorAll(".icon")
-      if (icon) {
-        Array.prototype.forEach.call(icon, (el) => {
-          let dataIconId = el.getAttribute("data-icon-id")
-          if (dataIconId == item.iconId) {
-            el.innerHTML = item.iconSvg
-          }
-        })
-      }
-    }
-  },
-  testFn() {
-    console.log("Other functions works like this.")
+      let uiContentParent = uiContent.getAttribute("data-ui-parent")
+
+      uiSide.querySelectorAll(".uikit__side-field").forEach((element) => {
+        var title = element.querySelector(".uikit__side-title")
+        if (title.innerHTML === uiContentParent) {
+          element.querySelector(".uikit__side-list").appendChild(uiLinkItem)
+        }
+      })
+    })
   },
 
   init: function () {
     app.load()
-    app.testFn()
-    app.iconSpriteFn()
+    app.uikitFn()
   },
 }
 

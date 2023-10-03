@@ -1,0 +1,110 @@
+.input {
+  &-item {
+    width: 100%;
+    position: relative;
+    transition: var(--transition);
+    background: var(--ui-bg);
+    border-radius: 0.6rem;
+    border: 0.1rem solid transparent;
+
+    &--textarea {
+      .input-item__placeholder {
+        transform: none;
+        top: 2rem;
+      }
+      &.input-item--valued {
+        border-color: transparent;
+        .input-item__placeholder {
+          top: 0.8rem !important;
+        }
+      }
+      &.input-item--focused {
+        border-color: var(--ui-primary);
+        .input-item__placeholder {
+          top: 0.8rem !important;
+        }
+      }
+    }
+    &--file {
+      background: var(--ui-bg) !important;
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+
+      input[type="file"] {
+        display: none;
+      }
+    }
+    &__file {
+      &-field {
+        margin-left: 1rem;
+      }
+    }
+    & > select {
+      position: relative;
+      top: 0 !important;
+      width: 95% !important;
+    }
+    & > input,
+    & > select,
+    & > textarea,
+    &--file {
+      width: 100%;
+      padding: 1.6rem 2.5rem;
+      border: none;
+      outline: none;
+      font-size: 1.6rem;
+      font-weight: 400;
+      line-height: 1em;
+      background: transparent;
+      position: relative;
+      color: var(--ui-text);
+      top: 0.2rem;
+      &:-webkit-autofill {
+        & ~ .input-item__placeholder {
+          top: 25%;
+          font-size: 1.2rem;
+        }
+      }
+      &:-webkit-autofill,
+      &:-webkit-autofill:hover,
+      &:-webkit-autofill:focus,
+      &:-webkit-autofill:active {
+        transition: background-color 5000s ease-in-out 0s;
+      }
+    }
+
+    select,
+    option {
+      cursor: default !important;
+    }
+    &__placeholder {
+      font-weight: 400;
+      font-size: 1.6rem;
+      position: absolute;
+      top: calc(50% + 0.1rem);
+      line-height: 1em;
+      left: 2.5rem;
+      transform: translateY(-50%);
+      transition: var(--transition);
+      pointer-events: none;
+      strong {
+        color: red;
+      }
+    }
+    &--valued {
+      border-color: transparent;
+      .input-item__placeholder {
+        top: 25%;
+        font-size: 1.2rem;
+      }
+    }
+    &--focused {
+      border-color: var(--ui-primary);
+      .input-item__placeholder {
+        top: 25%;
+        font-size: 1.2rem;
+      }
+    }
+  }
+}

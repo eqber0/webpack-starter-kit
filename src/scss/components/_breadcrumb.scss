@@ -1,0 +1,17 @@
+.breadcrumb {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  color: var(--c-black);
+  overflow-x: auto;
+  white-space: nowrap;
+  padding-bottom: 0.5rem;
+  text-transform: capitalize;
+  height: 4rem;
+  &__item {
+    color: var(--c-black);
+    &:last-child {
+      font-weight: 600;
+    }
+  }
+}

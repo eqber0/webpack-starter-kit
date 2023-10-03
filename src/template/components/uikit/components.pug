@@ -1,0 +1,206 @@
+#filter-tab.uikit__item(data-ui-parent='components')
+  .row.mb-4
+    p.uikit__item-p Filter Tab Fade
+    .filter-tab(data-filter-animation='fade' style='font-size:1.6rem')
+      .col-lg-12
+        .filter-tab-header.d-flex.justify-content-around
+          .tab-item.active(data-filter='filter1') Filter 1
+          .tab-item(data-filter='filter2') Filter 2
+          .tab-item(data-filter='filter3') Filter 3
+          .tab-item(data-filter='filter4') Filter 4
+      .col-lg-12
+        .filter-tab-content
+          .tab-content.filter1 Filter 1 Content
+          .tab-content.filter2.filtered Filter 2 Content
+          .tab-content.filter2.filter3.filtered Filter 2 Content Second
+          .tab-content.filter3.filtered Filter 3 Content
+          .tab-content.filter3.filtered Filter 3 Content Second
+          .tab-content.filter4.filtered Filter 4 Content
+          .tab-content.filter4.filtered Filter 4 Content Second
+  hr
+  .row.mt-4
+    p.uikit__item-p Filter Tab ScaleY
+    .filter-tab(data-filter-animation='scaleY' style='font-size:1.6rem')
+      .col-lg-12
+        .filter-tab-header.d-flex.justify-content-around
+          .tab-item.active(data-filter='filter1') Filter 1
+          .tab-item(data-filter='filter2') Filter 2
+          .tab-item(data-filter='filter3') Filter 3
+          .tab-item(data-filter='filter4') Filter 4
+      .col-lg-12
+        .filter-tab-content
+          .tab-content.filter1 Filter 1 Content
+          .tab-content.filter1 Filter 1 Content Second
+          .tab-content.filter2.filtered Filter 2 Content
+          .tab-content.filter2.filter3.filtered Filter 2 Content Second
+          .tab-content.filter3.filtered Filter 3 Content
+          .tab-content.filter3.filtered Filter 3 Content Second
+          .tab-content.filter4.filtered Filter 4 Content
+          .tab-content.filter4.filtered Filter 4 Content Second
+#accordion.uikit__item(data-ui-parent='components')
+  .row.mb-4
+    p.uikit__item-p Accordion
+    .accordion-wrapper
+      .accordion-item
+        .accordion-header.js-accordion-trigger
+          .accordion-header__title.txt--rem24
+            h3 accordion item 1
+          .accordion-header__icon
+        .accordion-content
+          .accordion-calc
+            .accordion-inner
+              .accordion-inner__txt.txt.txt--rem24.txt--font500
+                p
+                  | Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo nisi eius minus dicta
+                  | perspiciatis placeat!
+                  | Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo nisi eius minus dicta
+                  | perspiciatis placeat!
+                  br
+                  br
+                  | Lorem ipsum dolor sit amet consectetur adipisicing
+                  |                                     elit. Quo nisi eius minus dicta perspiciatis placeat!
+                  |                                     Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo nisi eius minus dicta
+                  |                                     perspiciatis placeat!
+                  |                                     Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo nisi eius minus dicta
+                  |                                     perspiciatis placeat!
+                  br
+                  | Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                  |                                     Quo nisi eius minus dicta perspiciatis placeat!
+                  |                                     Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo nisi eius minus dicta
+                  |                                     perspiciatis placeat!
+                  |                                     adipisicing elit. Quo nisi eius minus dicta perspiciatis placeat!
+      .accordion-item
+        .accordion-header.js-accordion-trigger
+          .accordion-header__title.txt.txt--rem24
+            h3 accordion item 2
+          .accordion-header__icon
+        .accordion-content
+          .accordion-calc
+            .accordion-inner
+              .accordion-inner__txt.txt.txt--rem24.txt--font500
+                p
+                  | Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo nisi eius minus dicta
+                  | perspiciatis placeat!
+                  | Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo nisi eius minus dicta
+                  | perspiciatis placeat!
+                  br
+                  br
+                  | Lorem ipsum dolor sit amet consectetur adipisicing
+                  |                                     elit. Quo nisi eius minus dicta perspiciatis placeat!
+                  |                                     Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo nisi eius minus dicta
+                  |                                     perspiciatis placeat!
+                  |                                     Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo nisi eius minus dicta
+                  |                                     perspiciatis placeat!
+                  br
+                  | Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                  |                                     Quo nisi eius minus dicta perspiciatis placeat!
+                  |                                     Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo nisi eius minus dicta
+                  |                                     perspiciatis placeat!
+                  |                                     adipisicing elit. Quo nisi eius minus dicta perspiciatis placeat!
+      .accordion-item
+        .accordion-header.js-accordion-trigger
+          .accordion-header__title.txt.txt--rem24
+            h3 accordion item 3
+          .accordion-header__icon
+        .accordion-content
+          .accordion-calc
+            .accordion-inner
+              .accordion-inner__txt.txt.txt--rem24.txt--font500
+                p
+                  | Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo nisi eius minus dicta
+                  | perspiciatis placeat!
+                  | Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo nisi eius minus dicta
+                  | perspiciatis placeat!
+                  br
+                  br
+                  | Lorem ipsum dolor sit amet consectetur adipisicing
+                  |                                     elit. Quo nisi eius minus dicta perspiciatis placeat!
+                  |                                     Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo nisi eius minus dicta
+                  |                                     perspiciatis placeat!
+                  |                                     Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo nisi eius minus dicta
+                  |                                     perspiciatis placeat!
+                  br
+                  | Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                  |                                     Quo nisi eius minus dicta perspiciatis placeat!
+                  |                                     Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo nisi eius minus dicta
+                  |                                     perspiciatis placeat!
+                  |                                     adipisicing elit. Quo nisi eius minus dicta perspiciatis placeat!
+#modal.uikit__item(data-ui-parent='components')
+  .row.mb-4
+    p.uikit__item-p Modal
+    button.uikit-btn.js-open-modal(data-modal-id='testModal')
+      | open modal
+    .main-modal.js-modal(data-modal-id='modal-testModal')
+      .main-modal__overlay.js-close-modal
+      .main-modal__wrapper
+        .main-modal__close.js-close-modal
+        .main-modal__content.custom-scrollbar
+          .catalog-card__modal-title
+            | Modal
+          .catalog-card__modal-text
+            .ck-content
+              | Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae alias debitis magni dicta. In
+              | quas repellendus ipsum voluptatem maxime inventore delectus ex voluptatum velit molestiae
+              | autem fugit eveniet nobis adipisci aperiam porro ullam sequi, minus facere soluta fuga dicta
+              | fugiat. Totam numquam aliquid minima voluptas architecto delectus odio, ipsam nam?
+#alert-toastr.uikit__item(data-ui-parent='components')
+  .row.g-5
+    p.uikit__item-p
+      | Alert toastr
+    .col-lg-3
+      button.uikit-btn(onclick="alertToastr('info','this is an info message')")
+        | alert info click me
+    .col-lg-3
+      button.uikit-btn(onclick="alertToastr('warning','this is an warning message')")
+        | alert warning click me
+    .col-lg-3
+      button.uikit-btn(onclick="alertToastr('success','this is an success message')")
+        | alert success click me
+    .col-lg-3
+      button.uikit-btn(onclick="alertToastr('error','this is an error message')")
+        | alert error click me
+#tippyjs-tooltip.uikit__item(data-ui-parent='components')
+  .row
+    p.uikit__item-p
+      | Tippy js tooltip
+    .col-lg-6
+      button.uikit-btn.js-tippy-tooltip(data-tippy-content='tooltip content')
+        | tooltip
+#carousel-video-modal.uikit__item(data-ui-parent='components')
+  .row.mb-4
+    p.uikit__item-p fancyapps carousel + video modal
+    .col-lg-3
+      a(href='https://lipsum.app/id/1/1024x768' data-fancybox='gallery' data-caption='Optional caption 1')
+        img(src='https://lipsum.app/id/1/1024x768' style='width: 100%;')
+    .col-lg-3
+      a(href='https://lipsum.app/id/2/1024x768' data-fancybox='gallery' data-caption='Optional caption 2')
+        img(src='https://lipsum.app/id/2/1024x768' style='width: 100%;')
+    .col-lg-3
+      a(href='https://lipsum.app/id/3/1024x768' data-fancybox='gallery' data-caption='Optional caption 3')
+        img(src='https://lipsum.app/id/3/1024x768' style='width: 100%;')
+    .col-lg-3
+      a(href='https://lipsum.app/id/4/1024x768' data-fancybox='gallery' data-caption='Optional caption 4')
+        img(src='https://lipsum.app/id/4/1024x768' style='width: 100%;')
+    .col-lg-3.mt-4
+      a.uikit-btn(href='https://www.youtube.com/watch?v=x_AN2Eonl2A&t=1s' data-fancybox='data-fancybox')
+        | Video modal
+#Counter.uikit__item(data-ui-parent='components')
+  p.uikit__item-p Counter Items
+  .row.g-4.g-md-5
+    .col-3
+      p#countervalue01.js-counter-item(data-count='100' data-suffix='%') 100
+    .col-3
+      p#countervalue02.js-counter-item(data-count='80' data-suffix='km/h') 100
+    .col-3
+      p#countervalue03.js-counter-item(data-count='123123' data-suffix='+') 100
+    .col-3
+      p#countervalue04.js-counter-item(data-count='100' data-suffix='') 100
+#button.uikit__item(data-ui-parent='components')
+  p.uikit__item-p Button
+  .row.g-4.g-md-5
+    .col-12
+      .btn
+        .btn-icon
+          span.icon.icon-font(data-icon-id='iconAngle')
+        .btn-txt
+          | Button

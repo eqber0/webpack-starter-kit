@@ -32,7 +32,7 @@ module.exports = {
     },
     compress: true,
     liveReload: true,
-    port: 8080,
+    port: 3000,
     hot: false,
     open: false,
   },
@@ -70,6 +70,10 @@ module.exports = {
         generator: {
           filename: "./images/[name][ext][query]",
         },
+      },
+      {
+        test: /\.css$/,
+        use: ["style-loader", "css-loader"],
       },
     ],
   },

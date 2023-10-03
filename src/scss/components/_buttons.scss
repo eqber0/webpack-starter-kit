@@ -1,0 +1,22 @@
+.btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: fit-content;
+  cursor: pointer;
+  padding: 1rem 0;
+  transition: var(--transition);
+  position: relative;
+  &-txt {
+    line-height: 1em;
+    font-size: var(--txt-rem20);
+    font-weight: 600;
+    color: var(--c-black);
+  }
+  &-icon {
+    display: flex;
+    align-items: center;
+    margin-right: 1rem;
+    transition: var(--transition);
+  }
+}

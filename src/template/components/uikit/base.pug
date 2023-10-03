@@ -1,0 +1,177 @@
+#breakpoints.uikit__item(data-ui-parent='base')
+  .row
+    .uikit-breakpoints
+      p.uikit__item-p Breakpoints
+      .uikit-breakpoints__row
+        .uikit-breakpoints__item mobile x small
+        .uikit-breakpoints__item max width: 350px
+        .uikit-breakpoints__item
+
+      .uikit-breakpoints__row
+        .uikit-breakpoints__item mobile m small
+        .uikit-breakpoints__item max width: 374px
+        .uikit-breakpoints__item
+
+      .uikit-breakpoints__row
+        .uikit-breakpoints__item mobile l small
+        .uikit-breakpoints__item max width: 424px
+        .uikit-breakpoints__item
+
+      .uikit-breakpoints__row
+        .uikit-breakpoints__item mobile small
+        .uikit-breakpoints__item max width: 480px
+        .uikit-breakpoints__item
+
+      .uikit-breakpoints__row
+        .uikit-breakpoints__item mobile
+        .uikit-breakpoints__item max width: 575px
+        .uikit-breakpoints__item
+
+      .uikit-breakpoints__row
+        .uikit-breakpoints__item tablet-small
+        .uikit-breakpoints__item max width: 767px
+        .uikit-breakpoints__item
+
+      .uikit-breakpoints__row
+        .uikit-breakpoints__item tablet
+        .uikit-breakpoints__item max width: 991px
+        .uikit-breakpoints__item
+
+      .uikit-breakpoints__row
+        .uikit-breakpoints__item tablet-big
+        .uikit-breakpoints__item max width: 1023px
+        .uikit-breakpoints__item
+
+      .uikit-breakpoints__row
+        .uikit-breakpoints__item desktop
+        .uikit-breakpoints__item max width: 1199px
+        .uikit-breakpoints__item
+
+      .uikit-breakpoints__row
+        .uikit-breakpoints__item laptop
+        .uikit-breakpoints__item max width: 1439px
+        .uikit-breakpoints__item
+
+      .uikit-breakpoints__row
+        .uikit-breakpoints__item desktop-m
+        .uikit-breakpoints__item max width: 1529px
+        .uikit-breakpoints__item
+
+      .uikit-breakpoints__row
+        .uikit-breakpoints__item desktop-l
+        .uikit-breakpoints__item max width: 1920px
+        .uikit-breakpoints__item
+
+      .uikit-breakpoints__row
+        .uikit-breakpoints__item r-mobile
+        .uikit-breakpoints__item min width: 576px
+        .uikit-breakpoints__item
+
+      .uikit-breakpoints__row
+        .uikit-breakpoints__item r-tablet-small
+        .uikit-breakpoints__item min width: 769px
+        .uikit-breakpoints__item
+
+      .uikit-breakpoints__row
+        .uikit-breakpoints__item r-tablet
+        .uikit-breakpoints__item min width: 993px
+        .uikit-breakpoints__item
+
+      .uikit-breakpoints__row
+        .uikit-breakpoints__item r-desktop
+        .uikit-breakpoints__item min width: 1201px
+        .uikit-breakpoints__item
+
+      .uikit-breakpoints__row
+        .uikit-breakpoints__item r-laptop
+        .uikit-breakpoints__item min width: 1441px
+        .uikit-breakpoints__item
+
+      .uikit-breakpoints__row
+        .uikit-breakpoints__item r-desktop-m
+        .uikit-breakpoints__item min width: 1530px
+        .uikit-breakpoints__item
+
+      .uikit-breakpoints__row
+        .uikit-breakpoints__item r-desktop-l
+        .uikit-breakpoints__item min width: 1920px
+        .uikit-breakpoints__item
+
+#container.uikit__item(data-ui-parent='base')
+  .row
+    .uikit-breakpoints
+      p.uikit__item-p Container
+      .uikit-breakpoints__row
+        .uikit-breakpoints__item container
+        .uikit-breakpoints__item max width: 1360px
+        .uikit-breakpoints__item
+
+      .uikit-breakpoints__row
+        .uikit-breakpoints__item container--sm
+        .uikit-breakpoints__item max width: 1280px
+        .uikit-breakpoints__item
+
+      .uikit-breakpoints__row
+        .uikit-breakpoints__item container--fluid
+        .uikit-breakpoints__item max width: 100%
+        .uikit-breakpoints__item
+
+#form.uikit__item(data-ui-parent='base')
+  .row
+    p.uikit__item-p Input
+    .col-lg-6.mb-4
+      .input-item
+        input(type='text')
+        span.input-item__placeholder
+          | placeholder
+          strong *
+    .col-lg-6.mb-4
+      .input-item
+        input(type='text')
+        span.input-item__placeholder
+          | placeholder
+          strong *
+    .col-lg-12.mb-4
+      .input-item.input-item--textarea
+        textarea(name='' cols='30' rows='10')
+        span.input-item__placeholder
+          | placeholder
+          strong *
+    .col-lg-12.mb-4
+      .input-item.input-item--file.js-file-upload-select
+        div Dosya Se&ccedil;:
+        .input-item__file-field.js-file-upload-field
+        input.js-file-upload(type='file' name='file-upload-input')
+    .col-lg-12.mb-4
+      .input-item.input-item--file.js-file-upload-select
+        div &Ccedil;oklu Dosya Se&ccedil;imi:
+        .input-item__file-field.js-file-upload-field
+        input.js-file-upload(type='file' multiple='multiple' name='file-upload-input')
+    .col-lg-3.mb-4
+      label.switch
+        .switch__text.switch__text--first text left
+        input(type='checkbox')
+        span.switch__slider
+        .switch__text.switch__text--last text right
+    .col-lg-3.mb-4
+      label.switch
+        input(type='checkbox')
+        span.switch__slider
+    .col-lg-3.mb-4
+      label.checkbox(for='checkbox1')
+        input#checkbox1(type='checkbox' name='checkbox1')
+        span.checkbox__checkmark
+        span.checkbox__txt Checkbox
+    .col-lg-3.mb-4
+      label.radio(for='radio1')
+        input#radio1(type='radio' name='radio' checked='checked')
+        span.radio__checkmark
+        span.radio__txt Radio 1
+      label.radio(for='radio1')
+        input#radio2(type='radio' name='radio' checked='checked')
+        span.radio__checkmark
+        span.radio__txt Radio 2
+      label.radio(for='radio1')
+        input#radio3(type='radio' name='radio' checked='checked')
+        span.radio__checkmark
+        span.radio__txt Radio 3

@@ -1,0 +1,25 @@
+extends ../layouts/layout.pug
+block append vars
+  - var header = true 
+  - var footer = true
+  - var pageName = "UIKIT"
+
+block append head
+  title= pageName + " Webpack 5 Starter Kit"
+
+block content
+  main.starter-kit
+    .uikit 
+      include ../components/uikit/sidebar.pug
+      .uikit__content
+        .container 
+          .uikit__header 
+            .uikit__header-title.js-scroll-text 
+              | Overview
+            .uikit__header-right 
+              a(href="../icons-sprite.html" target="_blank").uikit-btn Icons
+              a(href="../index.html").uikit-btn.uikit-btn--dark Website
+          .uikit__wrapper.js-uikit-content 
+            include ../components/uikit/started.pug
+            include ../components/uikit/base.pug
+            include ../components/uikit/components.pug

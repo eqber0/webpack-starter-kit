@@ -1,0 +1,61 @@
+@mixin filterTabAnimation($animationName) {
+  .tab-content {
+    opacity: 1;
+    animation: filtered + $animationName var(--transition) alternate forwards;
+    &.filtering {
+      animation: filtering + $animationName var(--transition) alternate forwards;
+    }
+  }
+}
+
+.filter-tab {
+  .tab-content {
+    &.filtered {
+      display: none;
+    }
+  }
+  &--fade {
+    @include filterTabAnimation(Fade);
+  }
+  &--scaleY {
+    @include filterTabAnimation(ScaleY);
+  }
+}
+
+// keyframes
+@keyframes filteringFade {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+@keyframes filteredFade {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@keyframes filteringScaleY {
+  from {
+    opacity: 1;
+    transform: scaleY(1);
+  }
+  to {
+    opacity: 0;
+    transform: scaleY(0);
+  }
+}
+@keyframes filteredScaleY {
+  from {
+    opacity: 0;
+    transform: scaleY(0);
+  }
+  to {
+    opacity: 1;
+    transform: scaleY(1);
+  }
+}

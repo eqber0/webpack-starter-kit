@@ -1,0 +1,113 @@
+.main-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: calc(100% - 6rem);
+  z-index: 30;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
+  visibility: hidden;
+  margin: 3rem 0 !important;
+  &.active {
+    pointer-events: all;
+    visibility: visible;
+    .main-modal {
+      &__overlay {
+        opacity: 1;
+        visibility: visible;
+        pointer-events: all;
+      }
+      &__wrapper {
+        opacity: 1;
+        visibility: visible;
+        pointer-events: all;
+        transform: translateY(0px);
+      }
+    }
+  }
+
+  &__overlay {
+    background: rgba(0, 0, 0, 0.6);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transition: var(--transition);
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+  }
+  &__close {
+    position: absolute;
+    top: -2.4rem;
+    right: -2.4rem;
+    width: max-content;
+    @include bp(dekstop) {
+      top: -2.1rem;
+      right: -2.1rem;
+    }
+    @include bp(tablet) {
+      top: -1.8rem;
+      right: -1.8rem;
+    }
+  }
+  &__wrapper {
+    height: max-content;
+    max-height: 102rem;
+    position: relative;
+    z-index: 1;
+    background: #fff;
+    max-width: var(--container-width);
+    padding: 6rem;
+    width: 100%;
+    height: 100%;
+    transition: var(--transition);
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transform: translateY(-5rem);
+
+    @include bp(tablet) {
+      height: 100%;
+      padding: 3rem;
+    }
+    @include bp(tablet-small) {
+      max-width: calc(100% - 5rem);
+      padding: 3rem;
+    }
+    @include bp(mobile) {
+      padding: 1rem;
+    }
+  }
+  &__content {
+    overflow-y: auto;
+    max-height: 100%;
+    padding: 2.5rem;
+    display: flex;
+    flex-direction: column;
+    overscroll-behavior: contain;
+    @include bp(tablet-small) {
+      max-height: 50rem;
+      padding: 1.5rem;
+    }
+    @include bp(mobile) {
+      max-height: 100%;
+    }
+    // @include bp(mobile-x-small) {
+    //     max-height: 40rem;
+    // }
+  }
+  &__top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 2rem 2.5rem;
+    @include bp(tablet-small) {
+      padding: 1.5rem;
+    }
+  }
+}
