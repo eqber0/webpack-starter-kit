@@ -1,0 +1,73 @@
+:root {
+    --container-width: 156rem;
+    @media (max-width: 1620px) {
+      --container-width: 136rem;
+    }
+    @include bp(laptop) {
+      --container-width: 115rem;
+    }
+    @include bp(desktop) {
+      --container-width: 96rem;
+    }
+    @include bp(tablet) {
+      --container-width: 72rem;
+    }
+    @include bp(tablet-small) {
+      --container-width: 52rem;
+    }
+    @include bp(mobile) {
+      --container-width: 100%;
+    }
+  }
+  
+  .container {
+    max-width: var(--container-width) !important;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 1.5rem !important;
+    padding-right: 1.5rem !important;
+  
+    &--sm {
+      max-width: 130rem !important;
+      @media (max-width: 1620px) {
+        max-width: 116rem !important;
+      }
+      @media (max-width: 1201px) {
+        max-width: 96rem !important;
+      }
+      @media (max-width: 991px) {
+        max-width: 72rem !important;
+      }
+      @media (max-width: 769px) {
+        max-width: 52rem !important;
+      }
+    }
+    &--fluid {
+      max-width: calc(100% - 8rem) !important;
+      width: 100%;
+      margin-left: auto;
+      margin-right: auto;
+      @include bp(desktop) {
+        max-width: calc(100% - 3rem) !important;
+      }
+      @include bp(tablet) {
+        max-width: var(--container-width) !important;
+        padding-left: 1.5rem;
+        padding-right: 1.5rem;
+      }
+    }
+  
+    &,
+    &--sm {
+      @include bp(mobile) {
+        padding-left: 2rem !important;
+        padding-right: 2rem !important;
+      }
+      @include bp(mobile-x-small) {
+        padding-left: 1.5rem !important;
+        padding-right: 1.5rem !important;
+      }
+    }
+  }
+  
