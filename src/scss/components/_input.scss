@@ -3,67 +3,90 @@
     width: 100%;
     position: relative;
     transition: var(--transition);
-    background: var(--ui-bg);
-    border-radius: 0.6rem;
-    border: 0.1rem solid transparent;
+    background: var(--c-white);
+    border-radius: 6rem;
+    border: 0.2rem solid var(--c-gray);
 
     &--textarea {
+      border-radius: 5rem;
       .input-item__placeholder {
         transform: none;
         top: 2rem;
       }
       &.input-item--valued {
-        border-color: transparent;
+        border-color: var(--c-primary);
         .input-item__placeholder {
-          top: 0.8rem !important;
+          top: -1.5rem !important;
         }
       }
       &.input-item--focused {
-        border-color: var(--ui-primary);
+        border-color: var(--c-primary);
         .input-item__placeholder {
-          top: 0.8rem !important;
+          top: -1.5rem !important;
         }
       }
     }
+
     &--file {
-      background: var(--ui-bg) !important;
       display: flex;
       align-items: center;
       justify-content: flex-start;
-
+      padding: 3rem 5rem;
+      font-size: var(--txt-rem24);
+      font-weight: 300;
+      line-height: 1em;
+      cursor: pointer;
       input[type="file"] {
         display: none;
       }
     }
+
     &__file {
+      &-title {
+        flex-shrink: 0;
+      }
+      &-item {
+        font-size: var(--txt-rem24);
+        font-weight: 500;
+        color: var(--c-primary);
+        &:not(:last-child) {
+          &::after {
+            content: ",";
+          }
+        }
+      }
       &-field {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1rem;
         margin-left: 1rem;
       }
     }
     & > select {
       position: relative;
       top: 0 !important;
-      width: 95% !important;
+      appearance: none;
     }
     & > input,
     & > select,
-    & > textarea,
-    &--file {
+    & > textarea {
       width: 100%;
-      padding: 1.6rem 2.5rem;
+      padding: 3rem 5rem;
       border: none;
       outline: none;
-      font-size: 1.6rem;
+      font-size: var(--txt-rem24);
       font-weight: 400;
       line-height: 1em;
       background: transparent;
       position: relative;
-      color: var(--ui-text);
+      color: var(--c-primary);
       top: 0.2rem;
       &:-webkit-autofill {
+        -webkit-text-fill-color: var(--c-primary) !important;
+
         & ~ .input-item__placeholder {
-          top: 25%;
-          font-size: 1.2rem;
+          top: 0;
+          font-size: 1.8rem;
         }
       }
       &:-webkit-autofill,
@@ -73,37 +96,55 @@
         transition: background-color 5000s ease-in-out 0s;
       }
     }
-
-    select,
-    option {
-      cursor: default !important;
+    &__icon {
+      position: absolute;
+      top: 50%;
+      right: 2.5rem;
+      transform: translateY(-50%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 3rem;
+      height: 3rem;
+      border-radius: 3rem;
+      background-color: var(--c-secondary);
+      transition: var(--transition);
+      .icon {
+        font-size: 1rem;
+        color: var(--c-white);
+        transition: var(--transition);
+      }
     }
     &__placeholder {
       font-weight: 400;
-      font-size: 1.6rem;
-      position: absolute;
-      top: calc(50% + 0.1rem);
+      font-size: var(--txt-rem24);
+      font-weight: 300;
       line-height: 1em;
-      left: 2.5rem;
+      position: absolute;
+      top: calc(50%);
+      left: 5rem;
       transform: translateY(-50%);
       transition: var(--transition);
       pointer-events: none;
+      padding: 0.5rem;
+      background-color: var(--c-white);
+
       strong {
         color: red;
       }
     }
+
+    &--focused,
     &--valued {
-      border-color: transparent;
-      .input-item__placeholder {
-        top: 25%;
-        font-size: 1.2rem;
-      }
-    }
-    &--focused {
-      border-color: var(--ui-primary);
-      .input-item__placeholder {
-        top: 25%;
-        font-size: 1.2rem;
+      border-color: var(--c-primary);
+      .input-item {
+        &__placeholder {
+          top: 0%;
+          font-size: 1.8rem;
+        }
+        &__icon {
+          background-color: var(--c-primary);
+        }
       }
     }
   }

@@ -97,25 +97,6 @@
         .uikit-breakpoints__item min width: 1920px
         .uikit-breakpoints__item
 
-#container.uikit__item(data-ui-parent='base')
-  .row
-    .uikit-breakpoints
-      p.uikit__item-p Container
-      .uikit-breakpoints__row
-        .uikit-breakpoints__item container
-        .uikit-breakpoints__item max width: 1360px
-        .uikit-breakpoints__item
-
-      .uikit-breakpoints__row
-        .uikit-breakpoints__item container--sm
-        .uikit-breakpoints__item max width: 1280px
-        .uikit-breakpoints__item
-
-      .uikit-breakpoints__row
-        .uikit-breakpoints__item container--fluid
-        .uikit-breakpoints__item max width: 100%
-        .uikit-breakpoints__item
-
 #form.uikit__item(data-ui-parent='base')
   .row
     p.uikit__item-p Input
@@ -138,13 +119,27 @@
           | placeholder
           strong *
     .col-lg-12.mb-4
+      .input-item.input-item--select
+        span.input-item__placeholder
+          | Select
+          strong *
+        span.input-item__icon
+          svg.icon.icon-font 
+            use(xlink:href='#iconAngle')
+        select(name="") 
+          option(value="") 
+          option(value="test") option 1
+          option(value="test1") option 2
+          option(value="test2") option 3
+          option(value="test3") option 4
+    .col-lg-12.mb-4
       .input-item.input-item--file.js-file-upload-select
-        div Dosya Se&ccedil;:
+        div Choose File:
         .input-item__file-field.js-file-upload-field
         input.js-file-upload(type='file' name='file-upload-input')
     .col-lg-12.mb-4
       .input-item.input-item--file.js-file-upload-select
-        div &Ccedil;oklu Dosya Se&ccedil;imi:
+        div Choose Multiple Files:
         .input-item__file-field.js-file-upload-field
         input.js-file-upload(type='file' multiple='multiple' name='file-upload-input')
     .col-lg-3.mb-4

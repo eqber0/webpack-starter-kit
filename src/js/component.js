@@ -1,4 +1,3 @@
-import icons from "../icons/icons"
 import $ from "jquery"
 import toastr from "toastr"
 // import "toastr/build/toastr.min.css"
@@ -10,39 +9,6 @@ import "@fancyapps/ui/dist/fancybox/fancybox.css"
 import { CountUp } from "countup.js"
 
 export default function components() {
-  // Icon Sprite
-  icons.forEach(iconSpriteFn)
-  function iconSpriteFn(item, index) {
-    const iconSprite = document.querySelector("#iconSprite")
-    if (iconSprite) {
-      iconSprite.innerHTML +=
-        "<div class='icon-sprite__item'>" +
-        "<span class='icon-sprite__number'>" +
-        (index + 1) +
-        "</span>" +
-        "<div class='icon-sprite__preview'>" +
-        "<span class='icon icon-font'>" +
-        item.iconSvg +
-        "</span>" +
-        "</div>" +
-        "<div class='icon-sprite__name'>" +
-        item.iconId +
-        "</div>" +
-        "</div>"
-    }
-
-    const icon = document.querySelectorAll(".icon")
-    if (icon) {
-      Array.prototype.forEach.call(icon, (el) => {
-        let dataIconId = el.getAttribute("data-icon-id")
-        if (dataIconId == item.iconId) {
-          el.innerHTML = item.iconSvg
-        }
-      })
-    }
-  }
-  // #Icon Sprite
-
   // Filter Tab
   const filterTab = document.querySelectorAll(".filter-tab")
   if (filterTab) {
@@ -184,6 +150,16 @@ export default function components() {
   const inputItem = document.querySelectorAll(
     ".input-item input, .input-item textarea"
   )
+  const selectInput = document.querySelectorAll(".input-item select")
+  selectInput.forEach((select) => {
+    select.addEventListener("change", () => {
+      if (select.value === "") {
+        select.parentNode.classList.remove("input-item--valued")
+      } else {
+        select.parentNode.classList.add("input-item--valued")
+      }
+    })
+  })
   inputItem.forEach((e) => {
     e.addEventListener("focusin", () => {
       e.parentNode.classList.add("input-item--focused")
@@ -206,19 +182,24 @@ export default function components() {
     fileSelect.onclick = function () {
       fileInputEl.click()
     }
-
-    fileInputEl.onchange = function () {
+    fileInputEl.addEventListener("change", () => {
       let selectField = fileSelect.querySelector(".js-file-upload-field")
       for (let i = 0; i < fileInputEl.files.length; i++) {
-        console.log(fileInputEl.files)
         const element = fileInputEl.files[i]
         if (fileInputEl.files.length > 0) {
+          fileInputEl
+            .closest(".input-item--file")
+            .classList.add("input-item--valued")
           selectField.innerHTML += `<div class="input-item__file-item">
-          <span>${element.name}</span>
-          </div>`
+                    <span>${element.name}</span>
+                    </div>`
+        } else {
+          fileInputEl
+            .closest(".input-item--file")
+            .classList.remove("input-item--valued")
         }
       }
-    }
+    })
   })
   // #File Upload
 

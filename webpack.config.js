@@ -5,6 +5,7 @@ const { CleanWebpackPlugin } = require("clean-webpack-plugin")
 const MiniCssExtractPlugin = require("mini-css-extract-plugin")
 const CssMinimizerPlugin = require("css-minimizer-webpack-plugin")
 const CopyWebpackPlugin = require("copy-webpack-plugin")
+const SvgSpriteHtmlWebpackPlugin = require("svg-sprite-html-webpack")
 
 // Get a list of all pug files in the templates/pages directory
 const pages = fs.readdirSync(path.resolve(__dirname, "src/template/pages"))
@@ -86,7 +87,29 @@ module.exports = {
       filename: "css/style.css",
     }),
     new CopyWebpackPlugin({
-      patterns: [{ from: "src/images", to: "images" }],
+      patterns: [
+        { from: "src/images", to: "images" },
+        { from: "src/icons", to: "icons" },
+        {
+          from: "src/fonts",
+          to: "fonts",
+          // Custom condition function to check if fonts folder contains files
+          filter: async (resourcePath) => {
+            const fontsDir = path.resolve(__dirname, resourcePath)
+            try {
+              const files = await fs.promises.readdir(fontsDir)
+              return files.length > 0 // Include folder if it contains files
+            } catch (err) {
+              console.error("Error reading fonts directory:", err)
+              return false // Exclude folder on error
+            }
+          },
+          noErrorOnMissing: true, // Prevent error if fonts folder is missing
+        },
+      ],
+    }),
+    new SvgSpriteHtmlWebpackPlugin({
+      includeFiles: ["src/icons/*.svg"],
     }),
   ],
 }
