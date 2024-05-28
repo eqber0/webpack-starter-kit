@@ -1,4 +1,62 @@
+block append vars
 header.header 
   .container 
     .header__wrapper 
       | header
+      .header__menu-btn
+        svg.header__menu-btn-icon(viewbox='0 0 100 100')
+          path.line.top(d='m 70,33 h -40 c 0,0 -8.5,-0.149796 -8.5,8.5 0,8.649796 8.5,8.5 8.5,8.5 h 20 v -20')
+          path.line.middle(d='m 70,50 h -40')
+          path.line.bottom(d='m 30,67 h 40 c 0,0 8.5,0.149796 8.5,-8.5 0,-8.649796 -8.5,-8.5 -8.5,-8.5 h -20 v 20')
+
+//- Mobile Menu
+.mobile-menu 
+  .container
+    .mobile-menu__wrapper
+      .mobile-menu__nav 
+        a(href="./index.html").mobile-menu__nav-item home
+        .mobile-menu__nav-item.mobile-menu__nav-item--dropdown 
+          .mobile-menu__nav-item__link 
+            p corporate
+            svg.icon.icon-font
+              use(xlink:href='#iconAngle')
+          .mobile-menu__nav-item__dropdown
+            a(href="#0").mobile-menu__nav-item__dropdown-item 
+              svg.icon.icon-font 
+                use(xlink:href="#iconAngle")
+              p mission
+            a(href="#0").mobile-menu__nav-item__dropdown-item 
+              svg.icon.icon-font 
+                use(xlink:href="#iconAngle")
+              p vision
+        .mobile-menu__nav-item.mobile-menu__nav-item--dropdown 
+          .mobile-menu__nav-item__link 
+            p products
+            svg.icon.icon-font
+              use(xlink:href='#iconAngle')
+          .mobile-menu__nav-item__dropdown
+            a(href="#0").mobile-menu__nav-item__dropdown-item 
+              svg.icon.icon-font
+                use(xlink:href='#iconAngle')
+              p example product 1
+            a(href="#0").mobile-menu__nav-item__dropdown-item 
+              svg.icon.icon-font
+                use(xlink:href='#iconAngle')
+              p example product 2
+            a(href="#0").mobile-menu__nav-item__dropdown-item 
+              svg.icon.icon-font
+                use(xlink:href='#iconAngle')
+              p example product 3
+            a(href="#0").mobile-menu__nav-item__dropdown-item 
+              svg.icon.icon-font
+                use(xlink:href='#iconAngle')
+              p example product 4
+            a(href="#0").mobile-menu__nav-item__dropdown-item 
+              svg.icon.icon-font
+                use(xlink:href='#iconAngle')
+              p example product 5
+            a(href="#0").mobile-menu__nav-item__dropdown-item 
+              svg.icon.icon-font
+                use(xlink:href='#iconAngle')
+              p example product 6
+        a(href="#0").mobile-menu__nav-item contact 

@@ -10,35 +10,61 @@ var app = {
   resized() {
     console.log("resized")
   },
-  // Base Functions
-  uikitFn() {
-    const uiContent = document.querySelectorAll(
-      ".js-uikit-content .uikit__item"
-    )
-    const uiSide = document.querySelector(".js-uikit-side")
-    uiContent.forEach((uiContent, i) => {
-      let uiContentName = uiContent.getAttribute("id")
-      const uiLinkItem = document.createElement("li")
-      const uiLinkItemA = document.createElement("a")
-      uiLinkItemA.setAttribute("href", `#${uiContentName}`)
-      uiLinkItem.classList.add("uikit__side-item")
-      uiLinkItem.appendChild(uiLinkItemA)
-      uiLinkItemA.innerHTML = uiContentName.replace(/-/g, " ")
 
-      let uiContentParent = uiContent.getAttribute("data-ui-parent")
-
-      uiSide.querySelectorAll(".uikit__side-field").forEach((element) => {
-        var title = element.querySelector(".uikit__side-title")
-        if (title.innerHTML === uiContentParent) {
-          element.querySelector(".uikit__side-list").appendChild(uiLinkItem)
+  mobileMenuFn() {
+    const mobileMenu = document.querySelector(".mobile-menu")
+    if (mobileMenu) {
+      const header = document.querySelector(".header")
+      const body = document.querySelector("body")
+      const toggleBtn = document.querySelector(".header__menu-btn")
+      let isOpen
+      toggleBtn.addEventListener("click", () => {
+        if (isOpen) {
+          header.classList.remove("menu-opened")
+          mobileMenu.classList.remove("opened")
+          body.style.overflow = ""
+          isOpen = false
+        } else {
+          header.classList.add("menu-opened")
+          mobileMenu.classList.add("opened")
+          body.style.overflow = "hidden"
+          isOpen = true
         }
       })
-    })
+
+      // Mobile Menu Dropdown
+      const dropdownItem = document.querySelectorAll(
+        ".mobile-menu__nav-item--dropdown"
+      )
+      dropdownItem.forEach((item) => {
+        const itemLink = item.querySelector(".mobile-menu__nav-item__link ")
+        itemLink.addEventListener("click", () => {
+          const dropdown = item.querySelector(
+            ".mobile-menu__nav-item__dropdown"
+          )
+          const dropdownH = dropdown.scrollHeight
+
+          if (item.classList.contains("dropdown-opened")) {
+            item.classList.remove("dropdown-opened")
+            dropdown.style.height = "0px"
+          } else {
+            dropdownItem.forEach((e) => {
+              e.classList.remove("dropdown-opened")
+              e.querySelector(".mobile-menu__nav-item__dropdown").style.height =
+                "0px"
+            })
+
+            item.classList.add("dropdown-opened")
+            dropdown.style.height = dropdownH + "px"
+          }
+        })
+      })
+    }
   },
 
   init: function () {
     app.load()
-    app.uikitFn()
+    app.mobileMenuFn()
   },
 }
 

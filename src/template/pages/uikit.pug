@@ -9,15 +9,13 @@ block append head
 block content
   main.starter-kit
     .uikit 
-      include ../components/uikit/sidebar.pug
       .uikit__content
         .container 
           .uikit__header 
             .uikit__header-title.js-scroll-text 
               | Overview
             .uikit__header-right 
-              a(href="../icons-sprite.html" target="_blank").uikit-btn Icons
-              a(href="../index.html").uikit-btn.uikit-btn--dark Website
+              a(href="./index.html").uikit-btn.uikit-btn--dark Website
           .uikit__wrapper.js-uikit-content 
             include ../components/uikit/base.pug
             include ../components/uikit/components.pug
