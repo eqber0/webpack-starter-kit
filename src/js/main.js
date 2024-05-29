@@ -11,6 +11,27 @@ var app = {
     console.log("resized")
   },
 
+  languageDropdownFn() {
+    const headerLanguage = document.querySelector(".header__language")
+    if (headerLanguage) {
+      const selected = headerLanguage.querySelector(
+        ".header__language-selected"
+      )
+      const dropdown = headerLanguage.querySelector(
+        ".header__language-dropdown"
+      )
+      selected.addEventListener("click", () => {
+        const dropdownH = dropdown.scrollHeight
+        if (headerLanguage.classList.contains("dropdown-opened")) {
+          dropdown.style.height = "0px"
+          headerLanguage.classList.remove("dropdown-opened")
+        } else {
+          dropdown.style.height = dropdownH + 60 + "px"
+          headerLanguage.classList.add("dropdown-opened")
+        }
+      })
+    }
+  },
   mobileMenuFn() {
     const mobileMenu = document.querySelector(".mobile-menu")
     if (mobileMenu) {
@@ -64,6 +85,7 @@ var app = {
 
   init: function () {
     app.load()
+    app.languageDropdownFn()
     app.mobileMenuFn()
   },
 }

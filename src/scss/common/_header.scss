@@ -29,10 +29,94 @@
     display: flex;
     align-items: center;
     gap: 2rem;
-    font-size: var(--txt-rem24);
-    font-weight: 700;
+    &-item {
+      gap: 2rem;
+      font-size: var(--txt-rem24);
+      font-weight: 500;
+    }
   }
 
+  &__language {
+    position: relative;
+    &.dropdown-opened {
+      .header__language {
+        &-selected {
+          border-radius: 1.5rem 1.5rem 0 0;
+          background-color: var(--c-primary);
+          transition-delay: 0s !important;
+          color: var(--c-white);
+          .icon {
+            color: var(--c-white);
+            transform: rotate(-180deg);
+          }
+        }
+        &-dropdown {
+          opacity: 1;
+          pointer-events: all;
+          visibility: visible;
+          transition-delay: 0s !important;
+        }
+      }
+    }
+    &-selected {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      color: var(--c-white);
+      background-color: var(--c-secondary);
+      padding: 0.75rem 1.5rem;
+      border-radius: 1.5rem;
+      line-height: 1em;
+      text-transform: uppercase;
+      font-size: var(--txt-rem18);
+      cursor: pointer;
+      transition: var(--transition);
+      transition-delay: 0.2s !important;
+      .icon {
+        font-size: 1rem;
+        // transform: rotate(90deg);
+        color: var(--c-white);
+        transition: var(--transition);
+      }
+    }
+    &-dropdown {
+      position: absolute;
+      top: 100%;
+      left: 0;
+      width: 100%;
+      height: 0px;
+      background-color: var(--c-primary);
+      border-radius: 0 0 1.5rem 1.5rem;
+      padding: 0.5rem 1.5rem;
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+      justify-content: center;
+      text-transform: uppercase;
+      opacity: 0;
+      pointer-events: none;
+      visibility: hidden;
+      transition-delay: 0.1s !important;
+      transition: var(--transition);
+
+      &__item {
+        font-size: var(--txt-rem18);
+        color: var(--c-white);
+        font-weight: 300;
+        padding: 0.25rem 0;
+        cursor: pointer;
+        transition: var(--transition);
+        opacity: 0.4;
+        &:not(:last-child) {
+          border-bottom: 0.1rem solid var(--c-primary-dark);
+        }
+        &:hover,
+        &.active {
+          opacity: 1;
+        }
+      }
+    }
+  }
   &__menu-btn {
     height: 100%;
     border-left: 0.1rem solid var(--c-border);

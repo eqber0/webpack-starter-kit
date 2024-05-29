@@ -2,7 +2,20 @@ block append vars
 header.header 
   .container 
     .header__wrapper 
-      | header
+      .header__logo 
+        p LOGO
+      .header__nav 
+        a(href="#0").header__nav-item anasayfa
+        a(href="#0").header__nav-item hakkimizda
+      .header__language
+        .header__language-selected 
+          | TR
+          svg.icon.icon-font
+            use(xlink:href='#iconAngle')
+        .header__language-dropdown 
+          .header__language-dropdown__item.active tr
+          .header__language-dropdown__item dE
+          .header__language-dropdown__item en
       .header__menu-btn
         svg.header__menu-btn-icon(viewbox='0 0 100 100')
           path.line.top(d='m 70,33 h -40 c 0,0 -8.5,-0.149796 -8.5,8.5 0,8.649796 8.5,8.5 8.5,8.5 h 20 v -20')
