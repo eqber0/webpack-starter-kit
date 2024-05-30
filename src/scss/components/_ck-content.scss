@@ -1,29 +1,37 @@
 .ck-content {
-  font-size: 2rem;
+  font-size: var(--txt-rem20);
   font-weight: 400;
-  color: var(--c-black);
-  @include bp(laptop) {
-    font-size: 1.6rem;
+  color: var(--c-paragraph);
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-weight: 600;
+    color: var(--c-primary);
+  }
+
+  h1 {
+    font-size: var(--txt-rem54);
   }
   h2 {
-    font-size: 3.2rem;
-    font-weight: 700;
-    color: var(--c-black);
-    @include bp(laptop) {
-      font-size: 2.2rem;
-    }
-    @include bp(tablet) {
-      font-size: 1.8rem;
-    }
+    font-size: var(--txt-rem48);
   }
-  p {
-    font-size: 2rem;
-    font-weight: 400;
-    color: var(--c-black);
-    @include bp(laptop) {
-      font-size: 1.6rem;
-    }
+  h3 {
+    font-size: var(--txt-rem34);
   }
+  h4 {
+    font-size: var(--txt-rem30);
+  }
+  h5 {
+    font-size: var(--txt-rem28);
+  }
+  h6 {
+    font-size: var(--txt-rem24);
+  }
+
   strong,
   b {
     font-weight: 700;
@@ -31,28 +39,7 @@
   ul,
   ol {
     li {
-      padding-left: 3rem;
-      position: relative;
-      color: var(--c-black);
-      margin: 2rem 0;
-      &::after {
-        content: "";
-        position: absolute;
-        width: 1rem;
-        height: 1rem;
-        background-color: var(--ui-primary);
-        border-radius: 50%;
-        left: 0;
-        top: 0.5rem;
-        z-index: 1;
-      }
-      strong,
-      b {
-        font-size: 2rem;
-        @include bp(laptop) {
-          font-size: 1.6rem;
-        }
-      }
+      list-style: disc;
     }
   }
   a {
@@ -60,10 +47,55 @@
     transition: var(--transition);
     font-weight: 700;
     &:hover {
-      color: var(--ui-primary);
+      color: var(--c-primary);
     }
   }
   img {
     max-width: 100%;
+  }
+
+  table {
+    width: 100%;
+    tbody {
+      tr {
+        @include bp(tablet) {
+          display: flex;
+          flex-direction: column;
+          padding: 1rem 0;
+          border-bottom: 0.1rem solid var(--c-gray-light);
+        }
+      }
+      td {
+        font-size: var(--txt-rem24);
+        font-weight: 300;
+        border-bottom: 0.1rem solid var(--c-gray-light);
+        @include bp(tablet) {
+          border-bottom: 0;
+          padding: 0;
+        }
+        &:first-child {
+          position: relative;
+          text-transform: uppercase;
+          font-weight: 500;
+          color: var(--c-secondary);
+          width: max-content;
+          padding: 1rem 0;
+          padding-right: 2rem;
+          border-right: 2rem solid var(--c-white);
+          border-collapse: collapse;
+          white-space: nowrap;
+          @include bp(tablet) {
+            padding: 0 1rem 0 0;
+          }
+          &::after {
+            content: ":";
+            position: absolute;
+            top: 50%;
+            right: 0;
+            transform: translateY(-50%);
+          }
+        }
+      }
+    }
   }
 }
