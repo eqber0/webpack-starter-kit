@@ -161,6 +161,15 @@ export default function components() {
     })
   })
   inputItem.forEach((e) => {
+    // Autofill Class
+    e.addEventListener("change", function (el) {
+      if (el.target.value != "") {
+        e.parentNode.classList.add("input-item--valued")
+      } else {
+        e.parentNode.classList.remove("input-item--valued")
+      }
+    })
+
     e.addEventListener("focusin", () => {
       e.parentNode.classList.add("input-item--focused")
     })
