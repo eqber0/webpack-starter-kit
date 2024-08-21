@@ -48,12 +48,12 @@
   input {
     &:checked {
       & + .switch__slider {
-        background-color: var(--ui-primary);
+        background-color: var(--c-primary);
       }
     }
     &:focus {
       & + .switch__slider {
-        box-shadow: 0 0 0.1rem var(--ui-primary);
+        box-shadow: 0 0 0.1rem var(--c-primary);
       }
     }
     &:checked {

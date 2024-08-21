@@ -48,7 +48,7 @@
   input {
     &:checked {
       & ~ .checkbox__checkmark {
-        background-color: var(--ui-primary);
+        background-color: var(--c-primary);
       }
     }
   }

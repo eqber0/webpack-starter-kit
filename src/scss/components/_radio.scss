@@ -47,7 +47,7 @@
   input {
     &:checked {
       & ~ .radio__checkmark {
-        background-color: var(--ui-primary);
+        background-color: var(--c-primary);
       }
     }
   }
