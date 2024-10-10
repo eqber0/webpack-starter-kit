@@ -1,21 +1,23 @@
 .accordion {
+  &-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 4rem;
+    @include bp(tablet) {
+      gap: 3rem;
+    }
+  }
   &-item {
+    padding: 0 2rem;
+    border-radius: 2rem;
     border-bottom: 0.2rem solid var(--c-border);
     &.active {
       .accordion {
         &-header {
           padding-bottom: 4rem;
-          &__title {
-            color: var(--c-primary);
-          }
           &__icon {
-            &:before {
-              transform: translate(-50%, -50%) rotate(90deg);
-              background-color: var(--c-primary);
-            }
-            &:after {
-              opacity: 0;
-              background-color: var(--c-primary);
+            .icon {
+              transform: rotate(45deg);
             }
           }
         }
@@ -26,67 +28,35 @@
       }
     }
   }
-
   &-header {
     display: flex;
     align-items: center;
     justify-content: space-between;
     padding: 2rem 0;
     transition: var(--transition);
+    gap: 2rem;
+    cursor: pointer;
     &__title {
+      font-size: var(--txt-rem24);
+      font-weight: 400;
+      color: var(--c-black);
       transition: var(--transition);
-      font-weight: 500;
     }
     &__icon {
-      width: 2.4rem;
-      height: 2.4rem;
       position: relative;
       flex-shrink: 0;
-      &:before {
-        content: "";
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        width: 0.2rem;
-        height: 100%;
-        background: var(--c-secondary);
+      .icon {
+        font-size: 2rem;
+        color: var(--c-black);
         transition: var(--transition);
-      }
-      &:after {
-        content: "";
-        position: absolute;
-        transition: var(--transition);
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        height: 0.2rem;
-        width: 100%;
-        background: var(--c-secondary);
       }
     }
   }
-
   &-content {
     overflow: hidden;
     height: 0;
     transition: var(--transition);
     width: 100%;
     opacity: 0;
-
-    small {
-      margin-bottom: 1.5rem;
-      display: inline-block;
-    }
-    strong {
-      font-weight: 900;
-      font-size: 2.4rem;
-      margin-bottom: 1.5rem;
-      display: inline-block;
-    }
-    p {
-      font-weight: 500;
-      line-height: 1.4em;
-    }
   }
 }

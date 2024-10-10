@@ -9,12 +9,14 @@
 @import "./components/_filter-tab";
 @import "./components/_input";
 @import "./components/_modal";
-@import "./components/_preloader";
 @import "./components/_radio";
 @import "./components/_switch";
 
 @import "./common/_header";
 @import "./common/_mobile-menu";
 @import "./common/_footer";
+@import "./common/_preloader";
+@import "./common/_cookie-alert";
 
 @import "./pages/_index";
+@import "./pages/_no-result";

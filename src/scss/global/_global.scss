@@ -8,6 +8,16 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-rendering: optimizeLegibility !important;
+
+  // TODO: Will be removed
+  padding-top: calc(var(--header-h) + 3rem);
+  height: 100dvh;
+  display: flex;
+  flex-direction: column;
+
+  .footer {
+    margin-top: auto;
+  }
 }
 
 .section {

@@ -1,4 +1,9 @@
 .header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 10;
   border-bottom: 0.1rem solid var(--c-black);
 
   &.menu-opened {
@@ -17,7 +22,6 @@
       }
     }
   }
-
   &__wrapper {
     display: flex;
     align-items: center;
@@ -35,7 +39,6 @@
       font-weight: 500;
     }
   }
-
   &__language {
     position: relative;
     &.dropdown-opened {

@@ -1,0 +1,24 @@
+extends ../layouts/layout.pug
+block append vars
+  - var header = true 
+  - var footer = false
+
+block append head
+  title Sorry, the page you are looking for cannot be found. | 404
+
+block content
+  main.no-result 
+    .no-result__bg
+      img(src="./images/no-result-bg.png", alt="")
+    .container 
+      .no-result__wrapper 
+        .no-result__value
+          p 404
+        .no-result__title 
+          h2 Sorry, the page you are looking for cannot be found.
+        .no-result__text.ck-content.ck-content--centered
+          p The page you are looking for is not here. This may mean that the page has been removed, renamed, or is temporarily unavailable.
+        .no-result__button
+          .btn.btn--primary.btn--centered
+            .btn-txt Go to homepage
+                

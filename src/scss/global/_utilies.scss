@@ -1,59 +1,106 @@
 :root {
-  --txt-rem54: 5.4rem;
-  --txt-rem48: 4.8rem;
-  --txt-rem36: 3.6rem;
-  --txt-rem30: 3rem;
-  --txt-rem28: 2.8rem;
-  --txt-rem24: 2.4rem;
-  --txt-rem20: 2rem;
+  --txt-rem16: 1.6rem;
   --txt-rem18: 1.8rem;
-  --txt-rem15: 1.5rem;
-}
-.txt {
-  &--rem {
-    &54 {
-      font-size: var(--txt-rem54);
-    }
-    &48 {
-      font-size: var(--txt-rem48);
-    }
-    &36 {
-      font-size: var(--txt-rem36);
-    }
-    &30 {
-      font-size: var(--txt-rem30);
-    }
-    &28 {
-      font-size: var(--txt-rem28);
-    }
-    &24 {
-      font-size: var(--txt-rem24);
-    }
-    &20 {
-      font-size: var(--txt-rem20);
-    }
-    &18 {
-      font-size: var(--txt-rem18);
-    }
-    &15 {
-      font-size: var(--txt-rem15);
-    }
+  --txt-rem20: 2rem;
+  --txt-rem24: 2.4rem;
+  --txt-rem28: 2.8rem;
+  --txt-rem32: 3.2rem;
+  --txt-rem36: 3.6rem;
+  --txt-rem40: 4rem;
+  --txt-rem44: 4.4rem;
+  --txt-rem48: 4.8rem;
+  --txt-rem52: 5.2rem;
+  --txt-rem56: 5.6rem;
+  --txt-rem60: 6rem;
+  --txt-rem64: 6.4rem;
+  --txt-rem68: 6.8rem;
+  --txt-rem72: 7.2rem;
+  --txt-rem80: 8rem;
+  --txt-rem90: 9rem;
+  --txt-rem100: 10rem;
+  @include bp(laptop) {
+    --txt-rem16: 1.5rem;
+    --txt-rem18: 1.7rem;
+    --txt-rem20: 1.9rem;
+    --txt-rem24: 2.2rem;
+    --txt-rem28: 2.5rem;
+    --txt-rem32: 2.9rem;
+    --txt-rem36: 3.3rem;
+    --txt-rem40: 3.7rem;
+    --txt-rem44: 4rem;
+    --txt-rem48: 4.3rem;
+    --txt-rem52: 4.7rem;
+    --txt-rem56: 5.1rem;
+    --txt-rem60: 5.5rem;
+    --txt-rem64: 5.9rem;
+    --txt-rem68: 6.3rem;
+    --txt-rem72: 6.7rem;
+    --txt-rem80: 7.5rem;
+    --txt-rem90: 8.5rem;
+    --txt-rem100: 9.5rem;
   }
-  &--font {
-    &300 {
-      font-weight: 300;
-    }
-    &400 {
-      font-weight: 400;
-    }
-    &500 {
-      font-weight: 500;
-    }
-    &600 {
-      font-weight: 600;
-    }
-    &700 {
-      font-weight: 700;
-    }
+
+  @include bp(desktop) {
+    --txt-rem16: 1.4rem;
+    --txt-rem18: 1.6rem;
+    --txt-rem20: 1.8rem;
+    --txt-rem24: 2.1rem;
+    --txt-rem28: 2.4rem;
+    --txt-rem32: 2.8rem;
+    --txt-rem36: 3.1rem;
+    --txt-rem40: 3.4rem;
+    --txt-rem44: 3.8rem;
+    --txt-rem48: 4.2rem;
+    --txt-rem52: 4.5rem;
+    --txt-rem56: 4.9rem;
+    --txt-rem60: 5.2rem;
+    --txt-rem64: 5.6rem;
+    --txt-rem68: 6rem;
+    --txt-rem72: 6.4rem;
+    --txt-rem80: 7.1rem;
+    --txt-rem90: 8rem;
+    --txt-rem100: 9rem;
+  }
+  @include bp(tablet) {
+    --txt-rem16: 1.3rem;
+    --txt-rem18: 1.5rem;
+    --txt-rem20: 1.7rem;
+    --txt-rem24: 2rem;
+    --txt-rem28: 2.3rem;
+    --txt-rem32: 2.6rem;
+    --txt-rem36: 2.9rem;
+    --txt-rem40: 3.2rem;
+    --txt-rem44: 3.5rem;
+    --txt-rem48: 3.8rem;
+    --txt-rem52: 4.1rem;
+    --txt-rem56: 4.4rem;
+    --txt-rem60: 4.7rem;
+    --txt-rem64: 5rem;
+    --txt-rem68: 5.3rem;
+    --txt-rem72: 5.6rem;
+    --txt-rem80: 6.2rem;
+    --txt-rem90: 7rem;
+    --txt-rem100: 8rem;
+  }
+  @include bp(mobile) {
+    --txt-rem16: 1.2rem;
+    --txt-rem18: 1.4rem;
+    --txt-rem20: 1.6rem;
+    --txt-rem24: 1.8rem;
+    --txt-rem28: 2rem;
+    --txt-rem32: 2.2rem;
+    --txt-rem36: 2.4rem;
+    --txt-rem40: 2.7rem;
+    --txt-rem44: 2.9rem;
+    --txt-rem48: 3.2rem;
+    --txt-rem52: 3.4rem;
+    --txt-rem56: 3.6rem;
+    --txt-rem60: 3.9rem;
+    --txt-rem64: 4.2rem;
+    --txt-rem68: 4.4rem;
+    --txt-rem72: 4.6rem;
+    --txt-rem80: 5rem;
+    --txt-rem90: 5.8rem;
+    --txt-rem100: 6.5rem;
   }
 }
