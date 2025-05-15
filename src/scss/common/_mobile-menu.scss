@@ -41,14 +41,14 @@
       }
       &:hover {
         color: var(--c-primary);
-        .icon {
+        iconify-icon {
           color: var(--c-primary);
         }
       }
       &.dropdown-opened {
         .mobile-menu__nav-item {
           &__link {
-            .icon {
+            iconify-icon {
               transform: rotate(-90deg);
             }
           }
@@ -60,7 +60,7 @@
         display: flex;
         align-items: center;
         gap: 1rem;
-        .icon {
+        iconify-icon {
           font-size: 1.4rem;
           color: var(--c-secondary);
           // transform: rotate(90deg);
@@ -83,7 +83,7 @@
           transition: var(--transition);
           &:hover {
             color: var(--c-primary);
-            .icon {
+            iconify-icon {
               color: var(--c-primary);
               font-size: 1.2rem;
             }
@@ -91,7 +91,7 @@
           &:not(:last-child) {
             border-bottom: 0.1rem solid var(--c-gray);
           }
-          .icon {
+          iconify-icon {
             font-size: 0;
             color: var(--c-secondary);
             transition: var(--transition);

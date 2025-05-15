@@ -29,6 +29,11 @@
     padding: 1.5rem 0;
     gap: 2rem;
   }
+  &__logo {
+    iconify-icon {
+      font-size: 3.2rem;
+    }
+  }
   &__nav {
     display: flex;
     align-items: center;
@@ -48,7 +53,7 @@
           background-color: var(--c-primary);
           transition-delay: 0s !important;
           color: var(--c-white);
-          .icon {
+          iconify-icon {
             color: var(--c-white);
             transform: rotate(-180deg);
           }
@@ -75,7 +80,7 @@
       cursor: pointer;
       transition: var(--transition);
       transition-delay: 0.2s !important;
-      .icon {
+      iconify-icon {
         font-size: 1rem;
         // transform: rotate(90deg);
         color: var(--c-white);

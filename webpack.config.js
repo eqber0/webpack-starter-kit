@@ -5,7 +5,6 @@ const { CleanWebpackPlugin } = require("clean-webpack-plugin")
 const MiniCssExtractPlugin = require("mini-css-extract-plugin")
 const CssMinimizerPlugin = require("css-minimizer-webpack-plugin")
 const CopyWebpackPlugin = require("copy-webpack-plugin")
-const SvgSpriteHtmlWebpackPlugin = require("svg-sprite-html-webpack")
 
 // Get a list of all pug files in the templates/pages directory
 const pages = fs.readdirSync(path.resolve(__dirname, "src/template/pages"))
@@ -89,7 +88,6 @@ module.exports = {
     new CopyWebpackPlugin({
       patterns: [
         { from: "src/images", to: "images" },
-        { from: "src/icons", to: "icons" },
         {
           from: "src/fonts",
           to: "fonts",
@@ -107,9 +105,6 @@ module.exports = {
           noErrorOnMissing: true, // Prevent error if fonts folder is missing
         },
       ],
-    }),
-    new SvgSpriteHtmlWebpackPlugin({
-      includeFiles: ["src/icons/*.svg"],
     }),
   ],
 }

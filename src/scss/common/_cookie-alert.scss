@@ -3,7 +3,7 @@
   bottom: 2rem;
   left: 50%;
   transform: translateX(-50%);
-  width: 90%;
+  width: 100%;
   max-width: 50rem;
   background-color: var(--c-border);
   border: 0.1rem solid var(--c-border);
@@ -15,6 +15,7 @@
   align-items: center;
   z-index: 999;
   transition: var(--transition);
+  background-color: var(--c-white);
   &.hidden {
     opacity: 0;
     transform: translateX(-50%) translateY(100%);

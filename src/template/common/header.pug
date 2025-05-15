@@ -2,16 +2,15 @@ block append vars
 header.header 
   .container 
     .header__wrapper 
-      .header__logo 
-        p LOGO
+      a(href="/").header__logo 
+        iconify-icon(icon="tabler:home")
       .header__nav 
         a(href="#0").header__nav-item anasayfa
         a(href="#0").header__nav-item hakkimizda
       .header__language
         .header__language-selected 
           | TR
-          svg.icon.icon-font
-            use(xlink:href='#iconAngle')
+          iconify-icon(icon="tabler:chevron-down")
         .header__language-dropdown 
           .header__language-dropdown__item.active tr
           .header__language-dropdown__item dE
@@ -31,45 +30,35 @@ header.header
         .mobile-menu__nav-item.mobile-menu__nav-item--dropdown 
           .mobile-menu__nav-item__link 
             p corporate
-            svg.icon.icon-font
-              use(xlink:href='#iconAngle')
+            iconify-icon(icon="tabler:chevron-down")
           .mobile-menu__nav-item__dropdown
             a(href="#0").mobile-menu__nav-item__dropdown-item 
-              svg.icon.icon-font 
-                use(xlink:href="#iconAngle")
+              iconify-icon(icon="tabler:chevron-down")
               p mission
             a(href="#0").mobile-menu__nav-item__dropdown-item 
-              svg.icon.icon-font 
-                use(xlink:href="#iconAngle")
+              iconify-icon(icon="tabler:chevron-down")
               p vision
         .mobile-menu__nav-item.mobile-menu__nav-item--dropdown 
           .mobile-menu__nav-item__link 
             p products
-            svg.icon.icon-font
-              use(xlink:href='#iconAngle')
+            iconify-icon(icon="tabler:chevron-down")
           .mobile-menu__nav-item__dropdown
             a(href="#0").mobile-menu__nav-item__dropdown-item 
-              svg.icon.icon-font
-                use(xlink:href='#iconAngle')
+              iconify-icon(icon="tabler:chevron-down")
               p example product 1
             a(href="#0").mobile-menu__nav-item__dropdown-item 
-              svg.icon.icon-font
-                use(xlink:href='#iconAngle')
+              iconify-icon(icon="tabler:chevron-down")
               p example product 2
             a(href="#0").mobile-menu__nav-item__dropdown-item 
-              svg.icon.icon-font
-                use(xlink:href='#iconAngle')
+              iconify-icon(icon="tabler:chevron-down")
               p example product 3
             a(href="#0").mobile-menu__nav-item__dropdown-item 
-              svg.icon.icon-font
-                use(xlink:href='#iconAngle')
+              iconify-icon(icon="tabler:chevron-down")
               p example product 4
             a(href="#0").mobile-menu__nav-item__dropdown-item 
-              svg.icon.icon-font
-                use(xlink:href='#iconAngle')
+              iconify-icon(icon="tabler:chevron-down")
               p example product 5
             a(href="#0").mobile-menu__nav-item__dropdown-item 
-              svg.icon.icon-font
-                use(xlink:href='#iconAngle')
+              iconify-icon(icon="tabler:chevron-down")
               p example product 6
         a(href="#0").mobile-menu__nav-item contact 

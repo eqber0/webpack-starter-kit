@@ -15,6 +15,7 @@ html(lang="en" data-theme="")
       link(rel="stylesheet", href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css")
     block styles
 
+
     script.
       function docReady(fn) {
         if (
@@ -35,6 +36,11 @@ html(lang="en" data-theme="")
      
     -if (footer)
       include ../common/footer
+
+    include ../common/cookie-alert
+    include ../common/preloader
+    
+    //- Dev Mode Only
     include ../common/ui-buttons
     
     block scripts

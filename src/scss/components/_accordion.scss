@@ -16,7 +16,7 @@
         &-header {
           padding-bottom: 4rem;
           &__icon {
-            .icon {
+            iconify-icon {
               transform: rotate(45deg);
             }
           }
@@ -45,7 +45,7 @@
     &__icon {
       position: relative;
       flex-shrink: 0;
-      .icon {
+      iconify-icon {
         font-size: 2rem;
         color: var(--c-black);
         transition: var(--transition);

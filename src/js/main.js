@@ -1,7 +1,7 @@
 // Imports
 import Headroom from "headroom.js"
 import components from "./component.js"
-
+import "iconify-icon"
 // Functions
 var app = {
   load() {
@@ -22,46 +22,48 @@ var app = {
   },
   cookieAlertFn() {
     const cookieAlert = document.querySelector(".js-cookie-alert")
-    const acceptBtn = document.querySelector(".js-cookie-accept")
-    const declineBtn = document.querySelector(".js-cookie-decline")
+    if (cookieAlert) {
+      const acceptBtn = document.querySelector(".js-cookie-accept")
+      const declineBtn = document.querySelector(".js-cookie-decline")
 
-    function getCookie(name) {
-      const value = `; ${document.cookie}`
-      const parts = value.split(`; ${name}=`)
-      if (parts.length === 2) return parts.pop().split(";").shift()
-      return null
-    }
+      function getCookie(name) {
+        const value = `; ${document.cookie}`
+        const parts = value.split(`; ${name}=`)
+        if (parts.length === 2) return parts.pop().split(";").shift()
+        return null
+      }
 
-    function setCookie(name, value, days) {
-      const date = new Date()
-      date.setTime(date.getTime() + days * 24 * 60 * 60 * 1000) // Set expiration time in milliseconds
-      const expires = `expires=${date.toUTCString()}`
-      document.cookie = `${name}=${value}; ${expires}; path=/`
-    }
+      function setCookie(name, value, days) {
+        const date = new Date()
+        date.setTime(date.getTime() + days * 24 * 60 * 60 * 1000) // Set expiration time in milliseconds
+        const expires = `expires=${date.toUTCString()}`
+        document.cookie = `${name}=${value}; ${expires}; path=/`
+      }
 
-    if (getCookie("cookieConsent") !== "true") {
-      setTimeout(() => {
-        cookieAlert.classList.remove("hidden")
-      }, 1500)
-    } else {
-      cookieAlert.remove()
-    }
-
-    function acceptCookies() {
-      setCookie("cookieConsent", "true", 30)
-      cookieAlert.classList.add("hidden")
-      setTimeout(() => {
+      if (getCookie("cookieConsent") !== "true") {
+        setTimeout(() => {
+          cookieAlert.classList.remove("hidden")
+        }, 1500)
+      } else {
         cookieAlert.remove()
-      }, 350)
+      }
+
+      function acceptCookies() {
+        setCookie("cookieConsent", "true", 30)
+        cookieAlert.classList.add("hidden")
+        setTimeout(() => {
+          cookieAlert.remove()
+        }, 350)
+      }
+      function declineCookies() {
+        cookieAlert.classList.add("hidden")
+        setTimeout(() => {
+          cookieAlert.remove()
+        }, 350)
+      }
+      acceptBtn.addEventListener("click", acceptCookies)
+      declineBtn.addEventListener("click", declineCookies)
     }
-    function declineCookies() {
-      cookieAlert.classList.add("hidden")
-      setTimeout(() => {
-        cookieAlert.remove()
-      }, 350)
-    }
-    acceptBtn.addEventListener("click", acceptCookies)
-    declineBtn.addEventListener("click", declineCookies)
   },
   headroomFn() {
     const header = document.querySelector("header")
@@ -91,12 +93,8 @@ var app = {
   languageDropdownFn() {
     const headerLanguage = document.querySelector(".header__language")
     if (headerLanguage) {
-      const selected = headerLanguage.querySelector(
-        ".header__language-selected"
-      )
-      const dropdown = headerLanguage.querySelector(
-        ".header__language-dropdown"
-      )
+      const selected = headerLanguage.querySelector(".header__language-selected")
+      const dropdown = headerLanguage.querySelector(".header__language-dropdown")
       selected.addEventListener("click", () => {
         const dropdownH = dropdown.scrollHeight
         if (headerLanguage.classList.contains("dropdown-opened")) {
@@ -131,15 +129,11 @@ var app = {
       })
 
       // Mobile Menu Dropdown
-      const dropdownItem = document.querySelectorAll(
-        ".mobile-menu__nav-item--dropdown"
-      )
+      const dropdownItem = document.querySelectorAll(".mobile-menu__nav-item--dropdown")
       dropdownItem.forEach((item) => {
         const itemLink = item.querySelector(".mobile-menu__nav-item__link ")
         itemLink.addEventListener("click", () => {
-          const dropdown = item.querySelector(
-            ".mobile-menu__nav-item__dropdown"
-          )
+          const dropdown = item.querySelector(".mobile-menu__nav-item__dropdown")
           const dropdownH = dropdown.scrollHeight
 
           if (item.classList.contains("dropdown-opened")) {
@@ -148,8 +142,7 @@ var app = {
           } else {
             dropdownItem.forEach((e) => {
               e.classList.remove("dropdown-opened")
-              e.querySelector(".mobile-menu__nav-item__dropdown").style.height =
-                "0px"
+              e.querySelector(".mobile-menu__nav-item__dropdown").style.height = "0px"
             })
 
             item.classList.add("dropdown-opened")
